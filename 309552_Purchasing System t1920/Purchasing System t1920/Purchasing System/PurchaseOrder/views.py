@@ -26,13 +26,13 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.conf import settings
 
-
 @login_required
 def purchaseorderform(request):
     context = {
             'title':'Purchase Order Form',
             'year':'2019/2020'
         }
+    context['user'] = request.user
 
     return render(request,'PurchaseOrder/purchaseorderform.html',context)
 
@@ -48,7 +48,7 @@ def fillingpurchaseorder(request):
     numberpo = len(purchaseorders)
     po_id = int(po_id) + int(numberpo) 
 
-    staff_id = request.user
+    staff_id = request.user.id
     staff = Person.objects.get(user_id = staff_id)
 
     try: 

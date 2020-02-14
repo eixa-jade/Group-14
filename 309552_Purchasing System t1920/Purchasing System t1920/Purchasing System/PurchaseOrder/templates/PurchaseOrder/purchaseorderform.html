@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="formpurchaseorder margintop" >
-    <form class="quotationfind" action="fillingpurchaseorder" method="get">
+    <form class="quotationfind" action="fillingpurchaseorder" method="GET">
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="quo_id" id="quo_id" placeholder="Quotation ID" aria-label="Quotation ID"
@@ -15,7 +15,6 @@
 
     </form>
     <p>{{error}}</p>
-
     <form class="purchaseordersubmission" action="purchaseorderconfirmation" method="POST">
         {% csrf_token %}
         <div class="row margintop">
