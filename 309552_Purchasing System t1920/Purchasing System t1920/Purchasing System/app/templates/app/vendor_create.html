@@ -1,0 +1,18 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div>
+    <form method="post" novalidate >
+  {% csrf_token %}
+  <table border="1">
+    {{ form }}
+  </table>
+  <button type="submit" class="btn btn-info buttonsize1">Submit</button>
+</form>
+    <div class="margintop">
+            <a type="submit" class="btn btn-info" href="/menu">Back</a>
+    </div>
+</div>
+
+{% endblock %}

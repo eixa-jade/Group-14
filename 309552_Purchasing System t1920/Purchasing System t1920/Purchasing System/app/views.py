@@ -6,9 +6,9 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-
+from app.models import Vendor
 from django.contrib.auth.decorators import login_required
-
+from app.forms import VendorForm
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -63,3 +63,12 @@ def menu(request):
     context['user'] = request.user
 
     return render(request,'app/menu.html',context)
+
+def vendor_create(request):
+    context={}
+    form = VendorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = VendorForm()
+    context = {'form': form}
+    return render(request, "app/vendor_create.html", context)

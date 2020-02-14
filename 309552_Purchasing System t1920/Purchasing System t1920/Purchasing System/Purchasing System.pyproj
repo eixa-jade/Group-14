@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\templates\app\menu.html" />
+    <Content Include="app\templates\app\vendor_create.html" />
     <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderconfirmation.html" />
     <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderdetails.html" />
     <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderform.html" />

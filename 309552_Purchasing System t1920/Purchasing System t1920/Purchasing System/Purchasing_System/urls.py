@@ -9,7 +9,7 @@ from django.contrib import admin
 
 import app.forms
 import app.views
-
+from app.views import vendor_create
 import PurchaseRequisition.views
 import RequestForQuotation.views
 import Quotation.views
@@ -100,6 +100,9 @@ urlpatterns = [
     url(r'^invoicedetails', Invoice.views.invoicedetails, name="invoice_details"),
     url(r'^invoicehistorydetails', Invoice.views.invoicehistorydetails, name='invoice_history_details'),
     url(r'^invoicehistory', Invoice.views.invoicehistory, name="invoice_history"),
+
+    #Vendor
+     url(r'^vendor_create$', app.views.vendor_create, name='vendor_create'),
 ]
 
 handler404 = "page_not_found"
